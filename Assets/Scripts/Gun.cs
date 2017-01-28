@@ -12,7 +12,7 @@ namespace Assets.Scripts {
 
         public bool IsReloading { get; private set; }
 
-        private void Awake() {
+        protected void Awake() {
             Trace.gameObject.SetActive(false);
         }
 

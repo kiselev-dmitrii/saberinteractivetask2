@@ -9,7 +9,7 @@ namespace Assets.Scripts.Actions {
     [TaskCategory("Custom")]
     [TaskDescription("Стреляет в пртивника target")]
     public class Fire : Action {
-        public SharedTransform target;
+        public SharedTransform Target;
         
         private Character character;
         private GameController controller;
@@ -24,8 +24,8 @@ namespace Assets.Scripts.Actions {
 
             if (character.Gun.Magazine <= 0) return TaskStatus.Failure;
 
-            character.transform.LookAt(target.Value);
-            character.Gun.transform.LookAt(target.Value);
+            character.transform.LookAt(Target.Value);
+            character.Gun.transform.LookAt(Target.Value);
             var victim = controller.Shoot(character.Gun);
             if (victim == null) return TaskStatus.Failure;
             else return TaskStatus.Success;
